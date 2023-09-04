@@ -3,7 +3,7 @@ import { GetServerSideProps, NextPage } from "next"
 import { useState, useEffect, ReactNode} from "react"
 import { Col, Container, Row, } from "reactstrap"
 
-type ApiResponse = {
+interface ApiResponse  {
   name: string
   timestamp: Date
 }
@@ -42,14 +42,16 @@ const Dynamic: NextPage = (props: {
       <Row>
         <Col>
           <h3>
-            Gerado no servidor: {props.serverSideData?.timestamp.toString()}
+            Gerado no servidor: 
           </h3>
+          <h2>{props.serverSideData?.timestamp.toString()}</h2>
         </Col>
 
         <Col>
           <h3>
-            Gerado no cliente: {clientSideData?.timestamp.toString()}
+            Gerado no cliente: 
           </h3>
+          <h2>{clientSideData?.timestamp.toString()}</h2>
         </Col>
       </Row>
     </Container>
