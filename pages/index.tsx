@@ -1,5 +1,8 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
+import Header from '@/src/components/Header'
+import { Button, Container } from 'reactstrap'
+import Link from 'next/link'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -13,15 +16,22 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header/>
       <main>
-        <h1>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint e
-        </p>
-
+      <Container className="py-5 text-center">
+          <h1 className="mt-5 display-1">
+            O melhor jeito de comprar o que você ama
+          </h1>
+          <p className="my-4">
+            Bem-vindo à nossa loja! Somos o seu destino de compras digital, onde você pode
+            explorar uma ampla variedade de produtos de alta qualidade e encontrar tudo que precisa.
+          </p>
+          <Link href="/products">
+            <Button color="dark" className="px-4 pb-2">
+              Conheça nossos produtos!
+            </Button>
+          </Link>
+        </Container>
       </main>
     </>
   )
